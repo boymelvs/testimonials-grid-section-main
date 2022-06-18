@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+*,
+::before,
+::after {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+:root {
+   /* primary colors */
+   --moderate-violet: hsl(263, 55%, 52%);
+   --very-dark-grayish-blue: hsl(217, 19%, 35%);
+   --very-dark-blackish-blue: hsl(219, 29%, 14%);
+   --white: hsl(0, 0%, 100%);
+
+   /* neutral */
+   --light-gray: hsl(0, 0%, 81%);
+   --light-grayish-blue: hsl(210, 46%, 95%);
+
+   /* font */
+   --font-fam-barlow: "Barlow Semi Condensed", sans-serif;
+   --font-fam-monospace: "Space Mono", monospace;
+   --font-size-10: 62.5%; /* 10px */
+   --font-weight-500: 500;
+   --font-weight-600: 600;
+
+   /* Note for text colors:
+
+1. "Verified Graduate" has the same color as the person's name with 50% opacity
+2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity */
+}
+
+html {
+   font-size: var(--font-size-10);
+   font-family: var(--font-fam-barlow);
+   scroll-behavior: smooth;
+}
+
+body {
+   font-size: 1.3rem;
+   background: var(--light-grayish-blue);
+   font-weight: var(--font-weight-500);
+}
+
+footer {
+   font-family: var(--font-fam-monospace);
+   font-size: 1.2rem;
+   text-align: center;
+   padding: 1rem;
+}
+
+footer a {
+   text-decoration: none;
+   color: var(--light-grey);
+}
+
+.container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: 1rem; /* between main content & footer */
+
+   min-width: 32rem;
+}
+
+.main_content {
+   display: flex;
+   flex-direction: column;
+   gap: 2rem; /* between each card */
+   padding: 5rem 2rem;
+
+   max-width: 144rem;
+   width: 100%;
+}
+
+@media (min-width: 768px) {
+   .main_content {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+   }
+}
+
+@media (min-width: 1280px) {
+   .main_content {
+      padding: 15rem;
+   }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+   .card_daniel {
+      grid-row: 1;
+      grid-column: 1 / span 6;
+   }
+
+   .jonathan {
+      grid-row: 1;
+      grid-column: 7 / span 6;
+   }
+
+   .jeanette {
+      grid-row: 2;
+      grid-column: 1 / span 6;
+   }
+
+   .patrick {
+      grid-row: 2;
+      grid-column: 7 / span 6;
+   }
+
+   .kira {
+      grid-row: 3;
+      grid-column: 1 / span 12;
+   }
+}
+
+@media (min-width: 1024px) {
+   .card_daniel {
+      grid-row: 1;
+      grid-column: 1 / span 6;
+   }
+
+   .jonathan {
+      grid-row: 1;
+      grid-column: 7 / span 3;
+   }
+
+   .jeanette {
+      grid-row: 2;
+      grid-column: 1 / span 3;
+   }
+
+   .patrick {
+      grid-row: 2;
+      grid-column: 4 / span 6;
+   }
+
+   .kira {
+      grid-row: 1 / span 2;
+      grid-column: 10 / span 3;
+   }
+}
+
+.card {
+   display: flex;
+   flex-direction: column;
+   gap: 1.5rem;
+   padding: 3rem;
+   width: 100%;
+   border-radius: 1rem;
+}
+
+.profile_container {
+   display: flex;
+   gap: 1rem; /* between prof_pic & name */
+   z-index: 1;
+}
+
+.prof_pic img {
+   width: 4rem;
+   height: 4rem;
+   border-radius: 50%;
+   border: 0.2rem solid var(--white);
+}
+
+.prof_pic .patrick {
+   border: 0.2rem solid var(--moderate-violet);
+}
+
+.prof_pic .daniel {
+   border: 0.2rem solid hsl(264, 82%, 70%);
+}
+
+.prof_name {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   gap: 0.1rem; /* between name & status */
+   color: var(--light-gray);
+   font-weight: var(--font-weight-600);
+}
+
+.profile_name {
+   color: var(--very-dark-grayish-blue);
+}
+
+.status {
+   font-weight: var(--font-weight-500);
+   opacity: 0.5;
+}
+
+.first_testimonial {
+   font-size: 2.1rem;
+   color: var(--light-gray);
+   font-weight: var(--font-weight-600);
+   width: 100%;
+}
+
+.st_testimonial {
+   color: var(--very-dark-grayish-blue);
+}
+
+.second_testimonial {
+   color: var(--light-gray);
+   opacity: 0.7;
+   width: 100%;
+}
+
+.nd_testimonial {
+   color: var(--very-dark-grayish-blue);
+}
+
+.card_daniel {
+   border-radius: 1rem;
+}
+
+.quotation_back {
+   display: flex;
+   flex-direction: column;
+   gap: 1.5rem;
+   padding: 3rem;
+
+   background-image: url("../images/bg-pattern-quotation.svg");
+   background-position: top 0 right 1.5rem;
+   background-repeat: no-repeat;
+   background-size: 12rem;
+}
+
+@media (min-width: 1024px) {
+   .quotation_back {
+      background-position: top 0 right 3rem;
+   }
+}
+
+@media (min-width: 1280px) {
+   .quotation_back {
+      background-position: top 0 right 5rem;
+   }
+}
+
+.card_daniel {
+   background: var(--moderate-violet);
+}
+
+.jonathan {
+   background: var(--very-dark-grayish-blue);
+}
+
+.patrick {
+   background: var(--very-dark-blackish-blue);
+}
+
+.white_back {
+   background: var(--white);
+}
